@@ -1,10 +1,14 @@
 'use strict'
 import React from 'react'
 
-const src = ({ children, handleClick }) => (
+const Button = ({ children, handleClick }) => (
   <button className='main-button' onClick={() => handleClick()}>
     {children}
   </button>
 )
 
-export default src
+Button.propTypes = {
+  handleClick: React.PropTypes.func.isRequired
+}
+
+export default Button
