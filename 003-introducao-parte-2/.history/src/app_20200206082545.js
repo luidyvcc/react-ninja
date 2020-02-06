@@ -6,7 +6,6 @@ class App extends Component {
     super()
     this.state = {
       value: 'valor inicial',
-      valueS: 2,
       checked: false
     }
   }
@@ -41,8 +40,7 @@ class App extends Component {
             <input type='radio' name='rd' value='2' /> Radio 2
           </label>
 
-          {/* Controlled Components */}
-          <select value={this.state.valueS} onChange={e => this.setState({ valueS: e.target.value })}>
+          <select>
             <option value='1'>Opção 1</option>
             <option value='2' selected>Opção 2</option>
             <option value='3'>Opção 3</option>
