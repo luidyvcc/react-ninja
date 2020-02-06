@@ -31,15 +31,8 @@ class App extends Component {
             checkbox
           </label>
 
-          <label> 
-            {/* Uncontrolled Components */}           
-            <input type='radio' name='rd' value='1' defaultChecked /> Radio 1
-          </label>
-          <label>
-            {/* Uncontrolled Components */}
-            <input type='radio' name='rd' value='2' /> Radio 2
-          </label>
-
+          <input type='radio' name='rd' value='1' /> Radio 1
+          <input type='radio' name='rd' value='1' /> Radio 2
         </form>
       </div>
     )

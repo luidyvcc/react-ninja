@@ -19,27 +19,11 @@ class App extends Component {
           <input type='text' defaultValue='valor inicial 2' />
 
           <label>
-            {/* Controlled Components */}
             <input type='checkbox'
               checked={this.state.checked}
               onChange={e => this.setState({ checked: !this.state.checked })} />
             checkbox
           </label>
-          <label>
-            {/* Uncontrolled Components */}
-            <input type='checkbox' defaultChecked={false} />
-            checkbox
-          </label>
-
-          <label> 
-            {/* Uncontrolled Components */}           
-            <input type='radio' name='rd' value='1' defaultChecked /> Radio 1
-          </label>
-          <label>
-            {/* Uncontrolled Components */}
-            <input type='radio' name='rd' value='2' /> Radio 2
-          </label>
-
         </form>
       </div>
     )
