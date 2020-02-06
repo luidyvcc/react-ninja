@@ -12,9 +12,8 @@ class App extends Component {
     return (
       <div>
         <form>
-          {/* Controlled Components */}
-          <input type='text' value={this.state.value} onChange={e => this.setState({value: e.target.value})} />
-          {/* Uncontrolled Components */}
+          <input type='text' value={this.state.value}
+            onChange={e => this.setState({value: e.target.value})} />
           <input type='text' defaultValue='valor inicial 2' />
         </form>
       </div>

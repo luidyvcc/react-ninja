@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 
 class App extends Component {
   constructor () {
-    super()
+    super();
     this.state = {
       value: 'valor inicial'
     }
@@ -12,10 +12,8 @@ class App extends Component {
     return (
       <div>
         <form>
-          {/* Controlled Components */}
-          <input type='text' value={this.state.value} onChange={e => this.setState({value: e.target.value})} />
-          {/* Uncontrolled Components */}
-          <input type='text' defaultValue='valor inicial 2' />
+          <input type='text' value={this.state.value} 
+            onChange={e => this.setState({value: e.target.value})} />
         </form>
       </div>
     )
