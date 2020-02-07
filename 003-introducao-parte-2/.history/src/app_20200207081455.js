@@ -15,18 +15,15 @@ class App extends Component {
       <div>
         <form
           onSubmit={e => {
-            e.preventDefault()
+            e.preventDefault();
             console.log('event: ', e)
           }}
           onChange={e => {
-            console.log('name: ', e.target.name)
-            console.log('value: ', e.target.value)
+            console.log('text: ', e.target.text)
           }}
         >
 
-          <input type='text' name='name' />
-
-          <input type='email' name='email' />
+          <textarea name='text' defaultValue={'valor\npadrão'} />
 
           <button type='submit'>Submit</button>
 

@@ -13,20 +13,9 @@ class App extends Component {
   render () {
     return (
       <div>
-        <form
-          onSubmit={e => {
-            e.preventDefault()
-            console.log('event: ', e)
-          }}
-          onChange={e => {
-            console.log('name: ', e.target.name)
-            console.log('value: ', e.target.value)
-          }}
-        >
+        <form onSubmit={e => console.log('event: ', e)}>
 
-          <input type='text' name='name' />
-
-          <input type='email' name='email' />
+          <textarea defaultValue={'valor\npadrão'} />
 
           <button type='submit'>Submit</button>
 

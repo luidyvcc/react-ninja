@@ -28,6 +28,8 @@ class App extends Component {
 
           <input type='email' name='email' />
 
+          <textarea name='textarea' defaultValue={'valor\npadrão'} />
+
           <button type='submit'>Submit</button>
 
         </form>
