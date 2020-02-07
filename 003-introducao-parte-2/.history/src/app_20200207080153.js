@@ -19,8 +19,6 @@ class App extends Component {
           {/* Uncontrolled Components */}
           <input type='text' defaultValue='valor inicial 2' />
 
-          <hr />
-
           <label>
             {/* Controlled Components */}
             <input type='checkbox'
@@ -34,18 +32,14 @@ class App extends Component {
             checkbox
           </label>
 
-          <hr />
-
-          <label>
-            {/* Uncontrolled Components */}
+          <label> 
+            {/* Uncontrolled Components */}           
             <input type='radio' name='rd' value='1' defaultChecked /> Radio 1
           </label>
           <label>
             {/* Uncontrolled Components */}
             <input type='radio' name='rd' value='2' /> Radio 2
           </label>
-
-          <hr />
 
           {/* Controlled Components */}
           <select value={this.state.valueS} onChange={e => this.setState({ valueS: e.target.value })}>
@@ -54,13 +48,7 @@ class App extends Component {
             <option value='3'>Opção 3</option>
           </select>
 
-          <hr />
-
-          {/* Uncontrolled Components */}
-          <textarea defaultValue={'valor\npadrão'} />
-
-          {/* Controlled Components */}
-          <textarea value='valor padrão' />
+          <textarea />
 
         </form>
       </div>

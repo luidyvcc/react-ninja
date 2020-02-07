@@ -36,8 +36,8 @@ class App extends Component {
 
           <hr />
 
-          <label>
-            {/* Uncontrolled Components */}
+          <label> 
+            {/* Uncontrolled Components */}           
             <input type='radio' name='rd' value='1' defaultChecked /> Radio 1
           </label>
           <label>
@@ -56,11 +56,7 @@ class App extends Component {
 
           <hr />
 
-          {/* Uncontrolled Components */}
-          <textarea defaultValue={'valor\npadrão'} />
-
-          {/* Controlled Components */}
-          <textarea value='valor padrão' />
+          <textarea />
 
         </form>
       </div>

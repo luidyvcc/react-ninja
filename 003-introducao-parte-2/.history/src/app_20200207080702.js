@@ -57,7 +57,7 @@ class App extends Component {
           <hr />
 
           {/* Uncontrolled Components */}
-          <textarea defaultValue={'valor\npadrão'} />
+          <textarea defaultValue={'valor\npadrão'}/>
 
           {/* Controlled Components */}
           <textarea value='valor padrão' />
