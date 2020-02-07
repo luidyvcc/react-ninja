@@ -18,7 +18,7 @@ class App extends Component {
             this.setState({
               checked: !this.state.checked
             }, () => {
-              this.setState({showContent: this.state.checked})
+                this.setState({ showContent: this.state.checked})
             })
           }} />
           Mostrar conteúdo

@@ -15,11 +15,8 @@ class App extends Component {
 
         <label>
           <input type='checkbox' checked={this.state.checked} onChange={e => {
-            this.setState({
-              checked: !this.state.checked
-            }, () => {
-              this.setState({showContent: this.state.checked})
-            })
+            this.setState('checked', !this.state.checked)
+            this.setState('showContent', this.state.checked)
           }} />
           Mostrar conteúdo
         </label>
