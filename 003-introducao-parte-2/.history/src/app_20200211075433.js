@@ -21,8 +21,8 @@ const App = () => (
       className='repos'
       repos={[
         { name: 'Nome do repositório', link: '#' },
+        { name: 'Nome do repositório', link: '#'},
         { name: 'Nome do repositório', link: '#' },
-        { name: 'Nome do repositório', link: '#' }
       ]}
     />
 
@@ -32,7 +32,7 @@ const App = () => (
       repos={[
         { name: 'Nome do repositório', link: '#' },
         { name: 'Nome do repositório', link: '#' },
-        { name: 'Nome do repositório', link: '#' }
+        { name: 'Nome do repositório', link: '#' },
       ]}
     />
 
