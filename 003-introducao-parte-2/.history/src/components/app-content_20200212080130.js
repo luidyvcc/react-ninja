@@ -12,7 +12,7 @@ const AppContent = ({ userInfo, repos, starred }) => (
 
     <Search />
 
-    {!!userInfo && <UserInfo userInfo={userInfo} />}
+    {!!userInfo && <UserInfo />}
 
     {!!userInfo && <Actions />}
 
@@ -31,10 +31,10 @@ const AppContent = ({ userInfo, repos, starred }) => (
   </div>
 )
 
-AppContent.propTypes = {
-  userInfo: React.PropTypes.object.isRequired,
-  repos: React.PropTypes.array.isRequired,
-  starred: React.PropTypes.array.isRequired
+AppContent.prototype = {
+  userInfo: React.PropType.string,
+  repos: React.PropType.string,
+  starred: React.PropType.string,
 }
 
 export default AppContent

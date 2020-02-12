@@ -7,34 +7,28 @@ import UserInfo from './user-info'
 import Actions from './actions'
 import Repos from './repos'
 
-const AppContent = ({ userInfo, repos, starred }) => (
+const AppContent = ({ userInfo, repos }) => (
   <div className='app'>
 
     <Search />
 
-    {!!userInfo && <UserInfo userInfo={userInfo} />}
+    {!!userInfo && <UserInfo />}
 
     {!!userInfo && <Actions />}
 
-    {!!repos.length && <Repos
+    {!!repos.lenght && <Repos
       title='Repositórios'
       className='repos'
       repos={repos} />
     }
 
-    {!!starred.length && <Repos
+    {!!repos.lenght && <Repos
       title='Favoritos'
       className='starred'
-      repos={starred} />
+      repos={repos} />
     }
 
   </div>
 )
-
-AppContent.propTypes = {
-  userInfo: React.PropTypes.object.isRequired,
-  repos: React.PropTypes.array.isRequired,
-  starred: React.PropTypes.array.isRequired
-}
 
 export default AppContent

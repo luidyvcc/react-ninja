@@ -9,19 +9,10 @@ class App extends Component {
     super()
     this.state = {
       userInfo: {
-        userName: 'Fernando Daciuk',
-        repos: 12,
-        followers: 10,
-        following: 2
+        userName: 'Fernando Daciuk'
       },
-      repos: [
-        { name: 'Repo', link: '#' },
-        { name: 'Repo', link: '#' }
-      ],
-      starred: [
-        { name: 'Star', link: '#' },
-        { name: 'Star', link: '#' }
-      ]
+      repos: [{name: 'Repo', link: '#'}],
+      starred: [{ name: 'Star', link: '#' }]
     }
   }
 

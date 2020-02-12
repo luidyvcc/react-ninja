@@ -8,20 +8,9 @@ class App extends Component {
   constructor () {
     super()
     this.state = {
-      userInfo: {
-        userName: 'Fernando Daciuk',
-        repos: 12,
-        followers: 10,
-        following: 2
-      },
-      repos: [
-        { name: 'Repo', link: '#' },
-        { name: 'Repo', link: '#' }
-      ],
-      starred: [
-        { name: 'Star', link: '#' },
-        { name: 'Star', link: '#' }
-      ]
+      userInfo: null,
+      repos: [],
+      starred: []
     }
   }
 

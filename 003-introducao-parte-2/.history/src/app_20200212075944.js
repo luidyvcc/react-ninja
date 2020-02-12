@@ -14,14 +14,8 @@ class App extends Component {
         followers: 10,
         following: 2
       },
-      repos: [
-        { name: 'Repo', link: '#' },
-        { name: 'Repo', link: '#' }
-      ],
-      starred: [
-        { name: 'Star', link: '#' },
-        { name: 'Star', link: '#' }
-      ]
+      repos: [{name: 'Repo', link: '#'}],
+      starred: [{ name: 'Star', link: '#' }]
     }
   }
 
