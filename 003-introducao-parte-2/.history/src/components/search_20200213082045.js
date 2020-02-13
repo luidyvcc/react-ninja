@@ -14,9 +14,6 @@ export default () =>
         const ENTER = 13
         if (keyCode === ENTER) {
           ajax().get(`https://api.github.com/users/${value}`)
-            .then(result => {
-              console.log(result)
-            })
         }
         console.log('change', keyCode)
       }}
