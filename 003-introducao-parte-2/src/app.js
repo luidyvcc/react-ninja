@@ -1,6 +1,7 @@
 'use strict'
 
 import React, { Component } from 'react'
+import ajax from '@fdaciuk/ajax'
 
 import AppContent from './components/app-content'
 
@@ -8,22 +9,32 @@ class App extends Component {
   constructor () {
     super()
     this.state = {
-      userInfo: {
-        userName: 'Fernando Daciuk',
-        photo: 'https://avatars0.githubusercontent.com/u/28025731?v=4',
-        login: 'luidyvcc',
-        repos: 12,
-        followers: 10,
-        following: 2
-      },
-      repos: [
-        { name: 'Repo', link: '#' },
-        { name: 'Repo', link: '#' }
-      ],
-      starred: [
-        { name: 'Star', link: '#' },
-        { name: 'Star', link: '#' }
-      ]
+      userInfo: null,
+      repos: [],
+      starred: []
+    }
+
+    this.handleSearch = this.handleSearch.bind(this)
+  }
+
+  handleSearch (e) {
+    const value = e.target.value
+    const keyCode = e.which || e.keyCode
+    const ENTER = 13
+    if (keyCode === ENTER) {
+      ajax().get(`https://api.github.com/users/${value}`)
+        .then((result) => {
+          this.setState({
+            userInfo: {
+              userName: result.name,
+              photo: result.avatar_url,
+              login: result.login,
+              repos: result.public_repos,
+              followers: result.followers,
+              following: result.following
+            }
+          })
+        })
     }
   }
 
@@ -33,6 +44,7 @@ class App extends Component {
         userInfo={this.state.userInfo}
         repos={this.state.repos}
         starred={this.state.starred}
+        handleSearch={this.handleSearch}
       />
     )
   }
