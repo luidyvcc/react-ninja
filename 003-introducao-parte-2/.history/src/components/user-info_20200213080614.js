@@ -8,11 +8,11 @@ const UserInfo = ({ userInfo }) =>
     <img src={userInfo.photo} />
 
     <h1 className='username'>
-      <a href={`https://api.github.com/users/${userInfo.login}`}>{userInfo.userName}</a>
+      <a href={`https://api.github.com/users/${userInfo.login}`}>{userInfo.name}</a>
     </h1>
 
     <ul className='repos-info'>
-      <li>- Repositórios: {userInfo.repos}</li>
+      <li>- Repositórios: {userInfo.repos.length}</li>
       <li>- Seguidores: {userInfo.followers}</li>
       <li>- Seguindo: {userInfo.following}</li>
     </ul>
@@ -24,7 +24,7 @@ UserInfo.propTypes = {
     userName: PropTypes.string.isRequired,
     photo: PropTypes.string.isRequired,
     login: PropTypes.string.isRequired,
-    repos: PropTypes.number.isRequired,
+    repos: PropTypes.array.isRequired,
     followers: PropTypes.number.isRequired,
     following: PropTypes.number.isRequired
   })

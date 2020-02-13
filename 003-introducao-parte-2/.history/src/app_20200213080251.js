@@ -11,7 +11,6 @@ class App extends Component {
       userInfo: {
         userName: 'Fernando Daciuk',
         photo: 'https://avatars0.githubusercontent.com/u/28025731?v=4',
-        login: 'luidyvcc',
         repos: 12,
         followers: 10,
         following: 2
