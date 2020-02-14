@@ -6,8 +6,8 @@ import ajax from '@fdaciuk/ajax'
 import AppContent from './components/app-content'
 
 class App extends Component {
-  constructor () {
-    super()
+  constructor (props) {
+    super(props)
     this.state = {
       userInfo: null,
       repos: [],
@@ -15,8 +15,6 @@ class App extends Component {
     }
 
     this.handleSearch = this.handleSearch.bind(this)
-    this.getRepos = this.getRepos.bind(this)
-    this.getStarred = this.getStarred.bind(this)
   }
 
   handleSearch (e) {
@@ -43,9 +41,9 @@ class App extends Component {
   getRepos () {
     ajax().get(`https://api.github.com/users/${this.state.login}/repos`)
       .then((result) => {
-        this.setState({
-          repos: []
-        })
+        // this.setState({
+        //   repos: []
+        // })
         console.log(result)
       })
   }

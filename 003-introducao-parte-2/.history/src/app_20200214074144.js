@@ -43,9 +43,9 @@ class App extends Component {
   getRepos () {
     ajax().get(`https://api.github.com/users/${this.state.login}/repos`)
       .then((result) => {
-        this.setState({
-          repos: []
-        })
+        // this.setState({
+        //   repos: []
+        // })
         console.log(result)
       })
   }

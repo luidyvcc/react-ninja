@@ -15,8 +15,6 @@ class App extends Component {
     }
 
     this.handleSearch = this.handleSearch.bind(this)
-    this.getRepos = this.getRepos.bind(this)
-    this.getStarred = this.getStarred.bind(this)
   }
 
   handleSearch (e) {
@@ -36,6 +34,7 @@ class App extends Component {
               following: result.following
             }
           })
+          console.log(result)
         })
     }
   }
@@ -48,6 +47,7 @@ class App extends Component {
         })
         console.log(result)
       })
+  }
   }
 
   getStarred () {
