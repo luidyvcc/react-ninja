@@ -43,9 +43,7 @@ class App extends Component {
     return () => {
       ajax().get(`https://api.github.com/users/${this.state.login}/${type}`).then((result) => {
         this.setState({
-          [type]: result.map(item => ({
-            name: item.name, link: item.html_url
-          }))
+          repos: []
         })
         console.log(result)
       })

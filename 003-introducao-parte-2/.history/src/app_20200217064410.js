@@ -15,7 +15,8 @@ class App extends Component {
     }
 
     this.handleSearch = this.handleSearch.bind(this)
-    // this.getRepos = this.getRepos.bind(this)
+    this.getRepos = this.getRepos.bind(this)
+    this.getStarred = this.getStarred.bind(this)
   }
 
   handleSearch (e) {
@@ -39,17 +40,18 @@ class App extends Component {
     }
   }
 
-  getRepos (type) {
-    return () => {
-      ajax().get(`https://api.github.com/users/${this.state.login}/${type}`).then((result) => {
+  getRepos () {
+    ajax().get(`https://api.github.com/users/${this.state.login}/repos`)
+      .then((result) => {
         this.setState({
-          [type]: result.map(item => ({
-            name: item.name, link: item.html_url
-          }))
+          repos: []
         })
         console.log(result)
       })
-    }
+  }
+
+  getStarred () {
+    console.log('getStarred')
   }
 
   render () {
@@ -59,8 +61,8 @@ class App extends Component {
         repos={this.state.repos}
         starred={this.state.starred}
         handleSearch={this.handleSearch}
-        getRepos={this.getRepos('repos')}
-        getStarred={this.getRepos('starred')}
+        getRepos={this.getRepos}
+        getStarred={this.getStarred}
       />
     )
   }
