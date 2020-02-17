@@ -15,6 +15,8 @@ class App extends Component {
     }
 
     this.handleSearch = this.handleSearch.bind(this)
+    // this.getGitHubApiUrl = this.getGitHubApiUrl.bind(this)
+    // this.getRepos = this.getRepos.bind(this)
   }
 
   getGitHubApiUrl (userName, type) {

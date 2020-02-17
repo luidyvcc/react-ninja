@@ -15,12 +15,14 @@ class App extends Component {
     }
 
     this.handleSearch = this.handleSearch.bind(this)
+    this.getGitHubApiUrl = this.getGitHubApiUrl.bind(this)
+    // this.getRepos = this.getRepos.bind(this)
   }
 
   getGitHubApiUrl (userName, type) {
     const internalUserName = userName ? `/${userName}` : ''
     const internalType = type ? `/${type}` : ''
-    return `https://api.github.com/users${internalUserName}${internalType}`
+    return `https://api.github.com/users/${internalUserName}${internalType}`
   }
 
   handleSearch (e) {
