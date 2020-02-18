@@ -2,7 +2,7 @@
 
 import React from 'react'
 
-const Search = ({ handleSearch, isFetching }) =>
+const Search = ({ handleSearch }) =>
   <div className='search'>
     <input
       type='search'
@@ -13,7 +13,6 @@ const Search = ({ handleSearch, isFetching }) =>
   </div>
 
 Search.propTypes = {
-  isFetching: React.PropTypes.bool.isRequired,
   handleSearch: React.PropTypes.func.isRequired
 }
 

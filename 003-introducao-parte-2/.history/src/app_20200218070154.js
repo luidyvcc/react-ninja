@@ -32,7 +32,7 @@ class App extends Component {
 
     if (keyCode === ENTER) {
       // target.disabled = true
-      this.setState({ isFetching: true })
+      this.setState({ isFetching = true })
       ajax().get(this.getGitHubApiUrl(value))
         .then((result) => {
           this.setState({
@@ -50,7 +50,6 @@ class App extends Component {
         })
         .always(() => {
           // target.disabled = false
-          this.setState({ isFetching: false })
         })
     }
   }
@@ -71,7 +70,6 @@ class App extends Component {
         userInfo={this.state.userInfo}
         repos={this.state.repos}
         starred={this.state.starred}
-        isFetching={this.state.isFetching}
         handleSearch={this.handleSearch}
         getRepos={this.getRepos('repos')}
         getStarred={this.getRepos('starred')}

@@ -10,9 +10,7 @@ import Repos from './repos'
 const AppContent = ({ userInfo, repos, starred, handleSearch, getRepos, getStarred, isFetching }) => (
   <div className='app'>
 
-    <Search isFetching={isFetching} handleSearch={handleSearch} />
-
-    {isFetching && <div>Carregando...</div>}
+    <Search handleSearch={handleSearch} />
 
     {!!userInfo && <UserInfo userInfo={userInfo} />}
 

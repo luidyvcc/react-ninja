@@ -32,7 +32,7 @@ class App extends Component {
 
     if (keyCode === ENTER) {
       // target.disabled = true
-      this.setState({ isFetching: true })
+      this.setState({ isFetching = true })
       ajax().get(this.getGitHubApiUrl(value))
         .then((result) => {
           this.setState({
@@ -50,7 +50,7 @@ class App extends Component {
         })
         .always(() => {
           // target.disabled = false
-          this.setState({ isFetching: false })
+          this.setState({ isFetching = false })
         })
     }
   }
