@@ -14,7 +14,6 @@ class App extends Component {
       starred: [],
       isFetching: false
     }
-
     this.handleSearch = this.handleSearch.bind(this)
   }
 
