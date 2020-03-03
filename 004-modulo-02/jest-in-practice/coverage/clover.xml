@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1583143231806" clover="3.2.0">
-  <project timestamp="1583143231806" name="All files">
-    <metrics statements="3" coveredstatements="1" conditionals="2" coveredconditionals="0" methods="1" coveredmethods="0" elements="6" coveredelements="1" complexity="0" loc="3" ncloc="3" packages="1" files="1" classes="1">
+<coverage generated="1583231762672" clover="3.2.0">
+  <project timestamp="1583231762673" name="All files">
+    <metrics statements="2" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="1" coveredmethods="0" elements="5" coveredelements="0" complexity="0" loc="2" ncloc="2" packages="1" files="1" classes="1">
       <file name="sum.js" path="C:\Users\Soar02\Documents\Cursos\Udemy\react-ninja\004-modulo-02\jest-in-practice\src\sum.js">
-        <metrics statements="3" coveredstatements="1" conditionals="2" coveredconditionals="0" methods="1" coveredmethods="0"/>
-        <line num="3" count="1" type="stmt"/>
-        <line num="4" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="5" count="0" type="stmt"/>
+        <metrics statements="2" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="2" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="3" count="0" type="stmt"/>
       </file>
     </metrics>
   </project>
