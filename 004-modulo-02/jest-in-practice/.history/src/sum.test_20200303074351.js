@@ -8,5 +8,5 @@ it('Sum should be a function', () => {
 })
 
 it('sum(1, 2) should return 3', () => {
-  expect(sum(1, 2)).to.be.equal(3)
+  expect(sum(1, 2)).to.be.a(3)
 })
