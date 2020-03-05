@@ -34,7 +34,3 @@ it('map[1, 2], (item, index, array) => array should return [[1, 2], [1, 2]]', ()
 it('map() should should return []', () => {
   expect(map()).to.be.deep.equal([])
 })
-
-it('map([1, 2]) should should return [1, 2]', () => {
-  expect(map([1, 2])).to.be.deep.equal([1, 2])
-})

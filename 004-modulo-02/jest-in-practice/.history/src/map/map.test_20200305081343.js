@@ -31,10 +31,10 @@ it('map[1, 2], (item, index, array) => array should return [[1, 2], [1, 2]]', ()
   expect(map([1, 2], (item, index, array) => array)).to.be.deep.equal([[1, 2], [1, 2]])
 })
 
-it('map() should should return []', () => {
-  expect(map()).to.be.deep.equal([])
+it('map should throw an error with message "func is not a function"', () => {
+  expect(map).to.throw(TypeError, /func is not a function/)
 })
 
-it('map([1, 2]) should should return [1, 2]', () => {
-  expect(map([1, 2])).to.be.deep.equal([1, 2])
+it('map should throw an error with message "array is not an array"', () => {
+  expect(map).to.throw(TypeError, /array is not an array/)
 })
