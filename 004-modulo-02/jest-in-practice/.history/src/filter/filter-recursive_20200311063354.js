@@ -8,7 +8,6 @@ const filter = (array, func) => {
   })(array, 0)
 }
 
-// // teacher's solution
 // const filter = (arr, func) => {
 //   return (function filterInternal(arrayInternal, counter) {
 //     const [head, ...tail] = arrayInternal
