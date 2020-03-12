@@ -23,11 +23,7 @@ it('every([1, 2, 3], item => item > 0) should return true', () => {
   expect(every([1, 2, 3], item => item > 0)).to.be.ok;
 })
 
-it('every([1, 2, 3], (item, index) => index === item - 1) should return true', () => {
-  expect(every([1, 2, 3], (item, index) => index === item - 1)).to.be.ok;
-})
-
-it('every([1, 2, 3], (item, index, array) => array.lenth === 3) should return true', () => {
-  expect(every([1, 2, 3], (_item, _index, array) => array.length === 3)).to.be.ok;
+it('every([1, 2, 3], (item, index) => index === item + 1) should return true', () => {
+  expect(every([1, 2, 3], (item, index) => index === item + 1)).to.be.ok;
 })
 
