@@ -23,8 +23,8 @@ it('some([1, 5, 3], item => item % 2 === 0 should return false', () => {
   expect(some([1, 5, 3], item => item % 2 === 0)).to.not.be.ok; // boolean test
 })
 
-it('some([1, 2, 3], (_item, _index, array) => array.indexOf(2) >= 0) should return true', () => {
-  expect(some([1, 2, 3], (_item, _index, array) => array.indexOf(2) >= 0)).to.be.ok; // boolean test
+it('some([1, 5, 3], (_item, _index, array) => array.indexOf(2) >= 0) should return true', () => {
+  expect(some([1, 5, 3], (_item, _index, array) => array.indexOf(2) >= 0)).to.be.ok; // boolean test
 })
 
 it('some([1, 2, 3], item => item > 2', () => {
