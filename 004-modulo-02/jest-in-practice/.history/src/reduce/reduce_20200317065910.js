@@ -7,7 +7,7 @@ const map = (arr, func, acc) => {
     newAcc = arr[0];
     arrCopy = arr.slice(1);
   }
-  for (let i = 0; i < arrCopy.length; i++) newAcc = func(newAcc, arrCopy[i], i, arrCopy)
+  for (let i = 0; i < arrCopy.length; i++) newAcc = func(newAcc, arrCopy[i], i)
   return newAcc
 }
 

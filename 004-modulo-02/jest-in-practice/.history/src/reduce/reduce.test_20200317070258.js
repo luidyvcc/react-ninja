@@ -27,6 +27,6 @@ it('reduce([1, 2, 3], (acc, item) => {acc + item; return acc}, {}) should return
   expect(reduce([1, 2, 3], (acc, item) =>{ acc['index' + item] = item; return acc }, {})).to.be.deep.equal({ index1: 1, index2: 2, index3: 3 })
 })
 
-it('reduce([1, 2], (acc, item, index, array) => acc + array[index], 0) should return 3', () => {
-  expect(reduce([1, 2], (acc, item, index, array) => acc + array[index], 0)).to.be.equal(3)
+it('reduce([1, 2], (acc, item, index, array) => acc + index, 0) should return 1', () => {
+  expect(reduce([1, 2], (acc, item, index, array) => acc + index, 0)).to.be.equal(1)
 })
