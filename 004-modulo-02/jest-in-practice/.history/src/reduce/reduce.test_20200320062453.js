@@ -31,9 +31,3 @@ it('reduce([1, 2, 3], (acc, item) => {acc + item; return acc}, {}) should return
 it('reduce([1, 2], (acc, item, index, array) => acc + array[index], 0) should return 3', () => {
   expect(reduce([1, 2], (acc, item, index, array) => acc + array[index], 0)).to.be.equal(3)
 })
-
-it('reduceRight(["do", "nan", "fer"], (acc, item) => acc + item, "") should return "fernando"', () => {
-  const before = reduceRight(['do', 'nan', 'fer'], (acc, item) => acc + item, '')
-  const after = 'fernando'
-  expect(before).to.be.equal(after)
-})

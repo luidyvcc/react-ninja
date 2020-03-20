@@ -2,7 +2,7 @@
 
 const isInitialValueUndefined = initialValue => initialValue === undefined
 
-const map = (arr, func, initialValue) => {
+const mainReduce = (arr, func, initialValue) => {
   const acc = isInitialValueUndefined(initialValue) ? arr[0] : initialValue
   const arrCopy = isInitialValueUndefined(initialValue) ? arr.slice(1) : arr
 
@@ -16,4 +16,4 @@ const map = (arr, func, initialValue) => {
   })(acc, arrCopy, 0);
 }
 
-export default map
+export default mainReduce

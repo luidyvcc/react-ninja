@@ -1,6 +1,6 @@
 'use strict'
 
-import mainReduce from './main-reduce'
+import mainReduce from './main-reducer-recursive'
 
 const reduce = mainReduce
 

@@ -33,7 +33,7 @@ it('reduce([1, 2], (acc, item, index, array) => acc + array[index], 0) should re
 })
 
 it('reduceRight(["do", "nan", "fer"], (acc, item) => acc + item, "") should return "fernando"', () => {
-  const before = reduceRight(['do', 'nan', 'fer'], (acc, item) => acc + item, '')
-  const after = 'fernando'
-  expect(before).to.be.equal(after)
+  const before = reduceRight(['do', 'nan', 'fer'], (acc, item) => acc + item, ');
+  const after = 'fernando';
+  expect(before).to.be.equal(after);
 })
