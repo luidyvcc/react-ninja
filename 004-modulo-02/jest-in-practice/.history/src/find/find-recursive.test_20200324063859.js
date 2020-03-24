@@ -22,7 +22,3 @@ it('find([1, 2, 3], (item, index) => index === 1) shoul return 2', () => {
 it('find([1, 2, 3], (item, index, array) => array[index] === 2) shoul return 2', () => {
   expect(find([1, 2, 3], (item, index, array) => array[index] === 2)).to.be.equal(2)
 })
-
-it('find([], item => item) should return undefined', () => {
-  expect(find([], item => item)).to.be.equal(undefined)
-})
