@@ -61,7 +61,7 @@ it('map(1) should throw a TypeError with message "The first parameter must be an
   expect(error).to.be.equal('The first parameter must be an array')
 })
 
-it('map([1, 2], "function") should throw a TypeError', () => {
+it('map([1,2], "function") should throw a TypeError', () => {
   let error
   try {
     map([1, 2], "function")
@@ -70,14 +70,3 @@ it('map([1, 2], "function") should throw a TypeError', () => {
   }
   expect(error).to.be.equal('TypeError')
 })
-
-it('map([1, 2], "function") should throw a TypeError with message "The second parameter must be a function"', () => {
-  let error
-  try {
-    map([1, 2], "function")
-  } catch (e) {
-    error = e.message
-  }
-  expect(error).to.be.equal('The second parameter must be a function')
-})
-
