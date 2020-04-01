@@ -18,7 +18,7 @@ module.exports = validate({
 
   output: {
     path: path.join(__dirname, 'dist'),
-    filename: '[name]-[hash].js',
+    filename: 'bundle.js',
     publicPath: ''
   },
 
