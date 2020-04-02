@@ -25,7 +25,6 @@ module.exports = validate({
 
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    new ExtractTextPlugin('[name]-[hash].css'),
     new HtmlPlugin({
       title: 'GitHub App',
       template: path.join(__dirname, 'src', 'html', 'template.html')
@@ -50,7 +49,7 @@ module.exports = validate({
       test: /\.css$/,
       exclude: /node_modules/,
       include: /src/,
-      loader: ExtractTextPlugin.extract('style', 'css')
+      loaders: ['style', 'raw']
     }]
   }
 })
