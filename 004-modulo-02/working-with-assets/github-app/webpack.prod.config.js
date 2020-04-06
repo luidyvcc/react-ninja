@@ -12,11 +12,12 @@ module.exports = validate({
 
   output: {
     path: path.join(__dirname, 'dist'),
-    filename: '[name]-[hash].js',
+    filename: '[name]-[hash].js'
   },
 
   plugins: [
     new ExtractTextPlugin('[name]-[hash].css'),
+
     new webpack.DefinePlugin({
       'process.env': {
         'NODE_ENV': '"production"'
@@ -28,11 +29,10 @@ module.exports = validate({
     }),
 
     new webpack.optimize.DedupePlugin(),
-
     new webpack.optimize.OccurrenceOrderPlugin(),
 
     new HtmlPlugin({
-      title: 'GitHub App',
+      title: 'GitHub app',
       template: path.join(__dirname, 'src', 'html', 'template.html')
     })
   ],
@@ -50,12 +50,11 @@ module.exports = validate({
       exclude: /node_modules/,
       include: /src/,
       loader: 'babel'
-    },
-    {
+    }, {
       test: /\.css$/,
       exclude: /node_modules/,
       include: /src/,
-      loaders: ['style', 'css']
+      loader: ExtractTextPlugin.extract('style', 'css')
     }]
   }
 })
