@@ -1,7 +1,7 @@
 'use strict'
 
 import React, { PropTypes } from 'react'
-import './actions.css';
+import './actions.css'
 
 const Actions = ({ getRepos, getStarred }) => (
   <div className='actions'>
