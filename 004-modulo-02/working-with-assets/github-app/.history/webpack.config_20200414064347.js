@@ -54,10 +54,9 @@ module.exports = validate({
     }]
   },
 
-  resolve: {
+  resole: {
     alias: {
-      src: path.join(__dirname, 'src'),
-      components: path.join(__dirname, 'src', 'components')
+      src: path.join(__dirname, 'src')
     }
   }
 })
