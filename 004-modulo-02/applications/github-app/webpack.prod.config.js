@@ -2,12 +2,11 @@
 
 const path = require('path')
 const webpack = require('webpack')
-const validate = require('webpack-validator')
 
 const HtmlPlugin = require('html-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
-module.exports = validate({
+module.exports = {
   entry: path.join(__dirname, 'src', 'index'),
 
   output: {
@@ -64,4 +63,4 @@ module.exports = validate({
       components: path.join(__dirname, 'src', 'components')
     }
   }
-})
+}
