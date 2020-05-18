@@ -1,12 +1,8 @@
 'use strict'
 
 const path = require('path')
-const webpack = require('webpack')
-const validate = require('webpack-validator')
 
-const HtmlPlugin = require('html-webpack-plugin')
-
-module.exports = validate({
+module.exports = {
   entry: path.join(__dirname, '..', 'src', 'index'),
 
   output: {
@@ -14,12 +10,12 @@ module.exports = validate({
     filename: '[name]-[hash].js'
   },
 
-  htmlPluginConfig: {
-    title: 'Github app',
-    template: path.join(__dirname, 'src', 'html', 'template-dev.html')
-  },
+  htmlPluginConfig: (template) => ({
+    title: 'GitHub app',
+    template: path.join(__dirname, '..', 'src', 'html', template)
+  }),
 
-  standardPreLoaders: {
+  standardPreLoader: {
     test: /\.js$/,
     exclude: /node_modules/,
     include: /src/,
@@ -32,7 +28,7 @@ module.exports = validate({
     include: /src/,
     loader: 'babel'
   },
-  
+
   cssLoader: {
     test: /\.css$/,
     exclude: /node_modules/,
@@ -43,7 +39,8 @@ module.exports = validate({
   resolve: {
     alias: {
       src: path.join(__dirname, '..', 'src'),
-      components: path.join(__dirname, '..', 'src', 'components')
+      components: path.join(__dirname, '..', 'src', 'components'),
+      utils: path.join(__dirname, '..', 'src', 'utils')
     }
   }
-})
+}
