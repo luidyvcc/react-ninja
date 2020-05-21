@@ -20,7 +20,7 @@ class App extends Component {
   getGitHubApiUrl (username, type) {
     const internalUser = username ? `/${username}` : ''
     const internalType = type ? `/${type}` : ''
-    return `https://api.github.com/users${internalUser}${internalType}?per_page=${this.perPage}`
+    return `https://api.github.com/users${internalUser}${internalType}`
   }
 
   handleSearch (e) {
