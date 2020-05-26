@@ -32,10 +32,7 @@ Repos.propTypes = {
       link: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired
     })).isRequired,
-    pagination: PropTypes.shape({
-      total: PropTypes.number,
-      activePage: PropTypes.number
-    }).isRequired
+    pagination: PropTypes.object.isRequired
   }).isRequired
 }
 

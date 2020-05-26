@@ -52,8 +52,9 @@ const reposPropTypesShape = {
 
 AppContent.propTypes = {
   userinfo: PropTypes.object,
-  repos: PropTypes.shape(reposPropTypesShape).isRequired,
-  starred: PropTypes.shape(reposPropTypesShape).isRequired,
+  repos: PropTypes.shape({
+  }).isRequired,
+  starred: PropTypes.object.isRequired,
   isFetching: PropTypes.bool.isRequired,
   handleSearch: PropTypes.func.isRequired,
   handlePagination: PropTypes.func.isRequired,
