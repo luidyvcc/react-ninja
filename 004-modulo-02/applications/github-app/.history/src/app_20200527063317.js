@@ -69,7 +69,6 @@ class App extends Component {
               })),
               pagination: {
                 ...this.state[type].pagination,
-                activePage: page
               }
             }
           })
