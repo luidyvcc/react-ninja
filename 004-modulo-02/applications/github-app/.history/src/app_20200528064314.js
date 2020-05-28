@@ -73,7 +73,7 @@ class App extends Component {
                 link: repo.html_url
               })),
               pagination: {
-                total: totalPagesMatch ? +totalPagesMatch[1] : this.state[type].pagination.total,
+                total: totalPagesMatch.length ? +totalPagesMatch[1] : 1,
                 activePage: page
               }
             }
