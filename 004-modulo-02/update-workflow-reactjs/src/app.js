@@ -8,33 +8,22 @@ class App extends PureComponent {
   constructor () {
     super()
     this.state = {
-      title: '...',
-      Component: 'div'
+      counter: 0
     }
   }
 
-  getTitle () {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve('My app with async / await!')
-      }, 2000)
-    })
-  }
-
   async componentDidMount () {
-    const title = await import('components/title')
-
-    this.setState({
-      title: await this.getTitle(),
-      Component: title.default
-    })
+    this.setState((state) => ({ counter: state.counter + 1 }))
+    this.setState((state) => ({ counter: state.counter + 1 }))
+    this.setState((state) => ({ counter: state.counter + 1 }))
   }
 
   render () {
+    const { counter } = this.state
+    console.log('Counter: ', counter);
+
     return (
-      <div>
-        <this.state.Component>{this.state.title}</this.state.Component>
-      </div>
+      <div>counter: {counter}</div>
     )
   }
 }
