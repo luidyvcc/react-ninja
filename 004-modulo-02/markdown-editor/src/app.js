@@ -2,6 +2,7 @@
 
 import React, { Component } from 'react'
 
+import MarkdownEditor from './components/markdown-editor';
 import './css/style.css'
 
 class App extends Component {
@@ -9,24 +10,14 @@ class App extends Component {
     super();
     this.state = { value: '' }
 
-    this.handleSubmit = (e) => {
-      e.preventDefault();
-
-      this.setState({
-        value: e.target.textarea.value,
-      });
+    this.handleChange = (e) => {
+      this.setState({ value: e.target.value });
     };
   }
 
   render () {
     return (
-      <div className='editor'>
-        <form onSubmit={this.handleSubmit}>
-          <textarea name='textarea' />
-          <button type='submit'>Renderizar markup</button>
-        </form>
-        <div className='view'>{this.state.value}</div>
-      </div>
+      <MarkdownEditor value={this.state.value} handleChange={this.handleChange} />
     )
   }
 }
