@@ -4,7 +4,7 @@ import React, { Component } from 'react'
 
 import MarkdownEditor from './components/markdown-editor';
 
-import 'normaliza.css'
+import 'normalize.css'
 import './css/style.css'
 
 class App extends Component {
