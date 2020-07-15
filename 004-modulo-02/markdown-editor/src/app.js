@@ -1,28 +1,35 @@
 'use strict'
 
 import React, { Component } from 'react'
-import marked from 'marked';
-import hljs from 'highlight.js'
-import MarkdownEditor from './components/markdown-editor';
-
+import marked from 'marked'
+import MarkdownEditor from './markdown-editor'
 
 import './css/style.css'
 
-marked.setOptions({ highlight: code => hljs.highlightAuto(code).value })
+import('highlight.js').then((hljs) => {
+  marked.setOptions({
+    highlight: (code, lang) => {
+      if (lang && hljs.getLanguage(lang)) {
+        return hljs.highlight(lang, code).value
+      }
+      return hljs.highlightAuto(code).value
+    }
+  })
+})
 
 class App extends Component {
   constructor () {
-    super();
+    super()
     this.state = { value: '' }
 
     this.handleChange = (e) => {
-      this.setState({ value: e.target.value });
-    };
+      this.setState({ value: e.target.value })
+    }
+
     this.getMarkup = () => {
       return { __html: marked(this.state.value) }
     }
   }
-
 
   render () {
     return (

@@ -14,6 +14,7 @@ module.exports = {
   output: common.output,
 
   plugins: [
+    new BundleAnalyzerPlugin(),
     new CleanPlugin(['dist'], {
       root: common.paths.root
     }),
@@ -32,8 +33,7 @@ module.exports = {
       name: 'react-build',
       chunks: ['main'],
       minChunks: ({ resource }) => (
-        /node_modules\/(react(-dom)?|fbjs)\//.test(resource) ||
-        /node_modules\/preact(-compat)?\//.test(resource)
+        /node_modules\/(react(-dom)?|fbjs)\//.test(resource)
       )
     }),
 
@@ -78,12 +78,5 @@ module.exports = {
     ]
   },
 
-  // resolve: common.resolve
-
-  resolve: {
-    alias: Object.assign({}, common.resolve.alias, {
-      'react': 'preact-compat',
-      'react-dom': 'preact-compat'
-    })
-  }
+  resolve: common.resolve
 }

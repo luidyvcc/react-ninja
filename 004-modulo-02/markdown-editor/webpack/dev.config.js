@@ -17,11 +17,11 @@ module.exports = {
   ],
 
   output: Object.assign({}, common.output, {
-    filename: '[name].js'
+    filename: '[name].js',
+    publicPath: ''
   }),
 
   plugins: [
-    new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new DashboardPlugin(),
 
