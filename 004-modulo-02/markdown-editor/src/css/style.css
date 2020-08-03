@@ -43,9 +43,23 @@ body {
   padding: 0 20px;
 }
 
+.editor-header .button-remove {
+  border: 0;
+  background: red;
+  color: #fff;
+  font-weight: 700;
+  padding: 0 20px;
+  text-transform: uppercase;
+  transition: all 0.25s ease-in-out;
+}
+
+.editor-header .button-remove:hover {
+  background: darkred;
+}
+
 textarea,
 .view {
-  height: 100%;
+  height: calc(100% - 40px);
   min-width: 50%;
   max-width: 50%;
 }
@@ -65,4 +79,5 @@ textarea:focus {
   color: #fff;
   padding: 10px;
   font-family: sans-serif;
+  overflow: auto;
 }
