@@ -13,7 +13,7 @@ const Button = ({ onClick, children, kind }) => (
 Button.propTypes = {
   onClick: PropTypes.func.isRequired,
   children: PropTypes.node.isRequired,
-  kind: PropTypes.oneOf(['success', 'danger']),
+  kind: PropTypes.oneOf(['success', 'danger'])
 }
 
 Button.defaultProps = {
