@@ -23,4 +23,3 @@ stories.add('Button danger', () => (
     Danger
   </Button>
 ))
-

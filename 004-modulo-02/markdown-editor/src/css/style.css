@@ -34,7 +34,7 @@ body {
   width: 100%;
 }
 
-.save-message {
+.editor-header .save-message {
   align-items: center;
   color: #fff;
   display: flex;
@@ -63,7 +63,7 @@ textarea:focus {
 .view {
   background: #333;
   color: #fff;
-  padding: 10px;
   font-family: sans-serif;
   overflow: auto;
+  padding: 10px;
 }

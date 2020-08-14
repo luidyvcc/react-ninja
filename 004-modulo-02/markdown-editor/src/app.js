@@ -36,7 +36,7 @@ class App extends Component {
       return { __html: marked(this.state.value) }
     }
 
-    this.handleSave = () => {
+    this.handleSave = (value) => {
       if (this.state.isSaving) {
         localStorage.setItem('md', this.state.value)
         this.setState({ isSaving: false })
@@ -59,8 +59,8 @@ class App extends Component {
   }
 
   componentDidMount () {
-    const value = localStorage.getItem('md') || ''
-    this.setState({ value })
+    const value = localStorage.getItem('md')
+    this.setState({ value: value || '' })
   }
 
   componentDidUpdate () {
@@ -80,8 +80,8 @@ class App extends Component {
         handleChange={this.handleChange}
         handleRemove={this.handleRemove}
         handleCreate={this.handleCreate}
-        textareaRef={this.textareaRef}
         getMarkup={this.getMarkup}
+        textareaRef={this.textareaRef}
       />
     )
   }
