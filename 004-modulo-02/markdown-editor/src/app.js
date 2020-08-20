@@ -53,6 +53,17 @@ class App extends Component {
 
     this.handleRemove = () => {
       localStorage.removeItem(this.state.id)
+      
+      // let files = Object.keys(this.state.files).reduce((acc, fileId) => {
+      //   return fileId === this.state.id ? acc : {
+      //     ...acc,
+      //     [fileId]: this.state.files[fileId]
+      //   }
+      // }, {})
+
+      // eslint-disable-next-line no-unused-vars
+      const { [this.state.id]: id, ...files } = this.state.files
+      this.setState({ files })
       this.createNew()
     }
 
@@ -67,18 +78,17 @@ class App extends Component {
     this.handleOpenFile = (fileId) => () => {
       this.setState({
         value: this.state.files[fileId],
-        id:  fileId
-      });
+        id: fileId
+      })
     }
   }
 
   componentDidMount () {
     const files = Object.keys(localStorage)
     this.setState({ files: files.reduce((acc, fileId) => ({
-        ...acc,
-        [fileId]: localStorage.getItem(fileId)
-      }), {})
-    })
+      ...acc,
+      [fileId]: localStorage.getItem(fileId)
+    }), {})})
   }
 
   componentDidUpdate () {
