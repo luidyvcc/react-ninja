@@ -42,7 +42,13 @@ class App extends Component {
     this.handleSave = (value) => {
       if (this.state.isSaving) {
         localStorage.setItem(this.state.id, this.state.value)
-        this.setState({ isSaving: false })
+        this.setState({
+          isSaving: false,
+          files: {
+            ...this.state.files,
+            [this.state.id]: this.state.value
+          }
+        })
       }
     }
 
@@ -52,15 +58,13 @@ class App extends Component {
     }
 
     this.handleRemove = () => {
-      localStorage.removeItem(this.state.id)
-      
+      localStorage.removeItem(this.state.id)      
       // let files = Object.keys(this.state.files).reduce((acc, fileId) => {
       //   return fileId === this.state.id ? acc : {
       //     ...acc,
       //     [fileId]: this.state.files[fileId]
       //   }
       // }, {})
-
       // eslint-disable-next-line no-unused-vars
       const { [this.state.id]: id, ...files } = this.state.files
       this.setState({ files })
