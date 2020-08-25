@@ -62,7 +62,7 @@ class App extends Component {
     }
 
     this.handleRemove = () => {
-      localStorage.removeItem(this.state.id)    
+      localStorage.removeItem(this.state.id)
       // let files = Object.keys(this.state.files).reduce((acc, fileId) => {
       //   return fileId === this.state.id ? acc : {
       //     ...acc,
@@ -92,8 +92,9 @@ class App extends Component {
   }
 
   componentDidMount () {
+    const regex = /^\w{8}-\w{4}-\w{4}-\w{4}-\w{12}$/
     const files = Object.keys(localStorage)
-    this.setState({ files: files.filter(id => id !== 'tokenTMP' && id !== 'token').reduce((acc, fileId) => ({
+    this.setState({files: files.filter(id => id.match(regex)).reduce((acc, fileId) => ({
       ...acc,
       [fileId]: JSON.parse(localStorage.getItem(fileId))
     }), {})})
