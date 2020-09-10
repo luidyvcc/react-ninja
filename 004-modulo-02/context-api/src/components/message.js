@@ -1,22 +1,22 @@
 'use strict'
 
-import React from 'react'
+import React, { Component } from 'react'
 import { PropTypes } from 'prop-types'
 
-const Message = ({ text }, { color }) => (
-  <li style={{ background: color }}>{text}</li>
-)
-
-// class Message extends Component {
-//   render() {
-//     return (
-//       <li style={{ background: this.context.color }}>{this.props.text}</li>
-//     )
-//   }
-// }
+class Message extends Component {
+  render () {
+    return (
+      <li style={{ background: this.context.color }}>
+        {this.props.text}
+        <button onClick={this.context.setColor(this.props.color)}>Change Color</button>
+      </li>
+    )
+  }
+}
 
 Message.contextTypes = {
-  color: PropTypes.string
+  color: PropTypes.string,
+  setColor: PropTypes.func
 }
 
 export default Message
