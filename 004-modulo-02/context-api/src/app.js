@@ -29,7 +29,7 @@ class App extends PureComponent {
         messages={[
           { text: 'hey', color: 'orange' },
           { text: 'ho', color: 'lightblue' },
-          { text: `let's go`, color: 'red' }
+          { text: 'let\'s go', color: 'red' }
         ]}
         color='purple'
       />

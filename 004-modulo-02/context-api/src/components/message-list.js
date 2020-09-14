@@ -3,12 +3,11 @@
 import React, { Component } from 'react'
 import Message from './message'
 
-
 class MessageList extends Component {
   shouldComponentUpdate () {
     return false
   }
-  
+
   render () {
     return (
       <ul>

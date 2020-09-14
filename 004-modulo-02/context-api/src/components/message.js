@@ -9,6 +9,12 @@ class Message extends Component {
       <li style={{ background: this.context.color }}>
         {this.props.text}
         <button onClick={this.context.setColor(this.props.color)}>Change Color</button>
+        <button onClick={() => {
+          this.updated = 'atualizou'
+          this.forceUpdate()
+        }}>
+          Forçar atualização: {this.updated}
+        </button>
       </li>
     )
   }
