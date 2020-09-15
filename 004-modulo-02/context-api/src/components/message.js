@@ -4,25 +4,25 @@ import React, { Component } from 'react'
 import { PropTypes } from 'prop-types'
 
 class Message extends Component {
+  componentDidMount () {
+    this.unsubscribe = this.context.store.subscribe(() => this.forceUpdate())
+  }
+
+  componentWillUnmount () {
+    this.unsubscribe()
+  }
   render () {
     return (
-      <li style={{ background: this.context.color }}>
+      <li style={{ background: this.context.store.color }}>
         {this.props.text}
-        <button onClick={this.context.setColor(this.props.color)}>Change Color</button>
-        <button onClick={() => {
-          this.updated = 'atualizou'
-          this.forceUpdate()
-        }}>
-          Forçar atualização: {this.updated}
-        </button>
+        <button onClick={this.context.store.setColor(this.props.color, () => this.forceUpdate())}>Change Color</button>
       </li>
     )
   }
 }
 
 Message.contextTypes = {
-  color: PropTypes.string,
-  setColor: PropTypes.func
+  store: PropTypes.object
 }
 
 export default Message

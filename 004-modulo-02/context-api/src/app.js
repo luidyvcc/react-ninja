@@ -9,17 +9,29 @@ import './css/style.css'
 class App extends PureComponent {
   constructor () {
     super()
-    this.state = { color: 'purple' }
 
-    this.setColor = color => e => {
-      this.setState({ color })
+    const subscriptions = []
+
+    const subscribe = f => {
+      subscriptions.push(f)
+      return () => subscriptions.filter(func => func !== f)
+    }
+
+    const setColor = color => e => {
+      this.store.color = color
+      subscriptions.forEach(f => f())
+    }
+
+    this.store = {
+      color: 'purple',
+      setColor,
+      subscribe
     }
   }
 
   getChildContext () {
     return {
-      color: this.state.color,
-      setColor: this.setColor
+      store: this.store
     }
   }
 
@@ -38,8 +50,7 @@ class App extends PureComponent {
 }
 
 App.childContextTypes = {
-  color: PropTypes.string,
-  setColor: PropTypes.func
+  store: PropTypes.object
 }
 
 export default App
