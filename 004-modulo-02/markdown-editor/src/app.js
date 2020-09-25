@@ -54,8 +54,12 @@ class App extends Component {
             content: this.state.value
           }
         }
+
         localStorage.setItem('markdown-editor', JSON.stringify(files))
-        this.setState({ isSaving: false, files })
+        this.setState({
+          isSaving: false,
+          files
+        })
       }
     }
 
@@ -67,6 +71,7 @@ class App extends Component {
     this.handleRemove = () => {
       // eslint-disable-next-line no-unused-vars
       const { [this.state.id]: id, ...files } = this.state.files
+
       localStorage.setItem('markdown-editor', JSON.stringify(files))
       this.setState({ files })
       this.createNew()

@@ -69,7 +69,7 @@ textarea:focus {
 }
 
 .files-list-container {
-  background: rgb(255, 250, 228);
+  background: #fc0;
   min-width: 20%;
   max-width: 20%;
 }
