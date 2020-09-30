@@ -20,7 +20,7 @@ class App extends PureComponent {
 
   render () {
     const { counter } = this.state
-    console.log('Counter: ', counter);
+    console.log('Counter: ', counter)
 
     return (
       <div>counter: {counter}</div>
