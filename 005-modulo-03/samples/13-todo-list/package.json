@@ -11,6 +11,7 @@
     "build:analyzer": "cross-env ANALYZER=true yarn build",
     "storybook": "start-storybook -p 6006 -c storybook",
     "storybook:build": "cross-env NODE_ENV=production BABEL_ENV=production build-storybook -c storybook",
+    "storybook:server": "cd storybook-static && python -m http.server 6006",
     "update-packages": "node scripts/update.js"
   },
   "jest": {
