@@ -7,14 +7,16 @@ import TodosList from 'components/todos-list'
 import Filter from 'components/filter'
 import SearchCep from './components/search-cep'
 
+import 'milligram'
+
 const App = () => (
-  <div>
+  <div style={{ display: 'flex', justifyContent: 'space-around', padding: '30px' }}>
     <div>
       <Form />
       <TodosList />
       <Filter />
     </div>
-    
+
     <div>
       <SearchCep />
     </div>
