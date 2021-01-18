@@ -12,14 +12,17 @@ const store = configureStore()
 const db = firebase.database()
 const videos = db.ref('videos')
 
-// videos.on('value', snapshot => {
-//   console.log('snapshot: ', snapshot.val())
-// }, error => {
-//   console.log('error: ', error)
-// })
+const videoJS = videos.push()
 
-videos.once('value').then(snapshot => {
+videoJS.set({
+  id: '7Ur9zN2vMcs',
+  title: 'JavaScript Secrets'
+})
+
+videos.on('value', snapshot => {
   console.log('snapshot: ', snapshot.val())
+}, error => {
+  console.log('error: ', error)
 })
 
 const renderApp = (NextApp) => {
