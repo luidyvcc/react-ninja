@@ -12,11 +12,11 @@ const store = configureStore()
 const db = firebase.database()
 const videos = db.ref('videos')
 
-const anyVideo = videos.push()
-
-anyVideo.update({
-  id: 'novo',
+videos.child('-MROwytcsPrwd82qCIpx').update({
+  id: null,
 })
+
+db.ref('categories/humor').remove()
 
 videos.on('value', snapshot => {
   console.log('snapshot: ', snapshot.val())
