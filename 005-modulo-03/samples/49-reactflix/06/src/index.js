@@ -6,17 +6,22 @@ import { AppContainer } from 'react-hot-loader'
 import { Provider } from 'react-redux'
 import App from './app'
 import configureStore from './redux-flow/configure-store'
+import { db } from './config/firebase'
 
 const store = configureStore()
 
-const db = firebase.database()
 const videos = db.ref('videos')
 
-videos.child('-MROwytcsPrwd82qCIpx').update({
-  id: null,
+videos.child('123').set({
+  id: '123',
+  title: 'JavaScript secrets'
 })
 
-db.ref('categories/humor').remove()
+// videos.child('-MROwytcsPrwd82qCIpx').update({
+//   id: null
+// })
+
+// db.ref('categories/humor').remove()
 
 videos.on('value', snapshot => {
   console.log('snapshot: ', snapshot.val())
