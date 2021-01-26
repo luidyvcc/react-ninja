@@ -3,7 +3,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { connect } from 'react-redux'
-import { ADD_VIDEO } from '../redux-flow/reducers/videos/actions'
+import { addVideo } from '../redux-flow/reducers/videos/action-creators'
 
 const RegisterVideo = ({ onSubmit }) => (
   <Form onSubmit={onSubmit}>
@@ -26,13 +26,9 @@ const Form = styled.form`
 const mapDispatchToProps = (dispatch) => ({
   onSubmit: (e) => {
     e.preventDefault()
-    dispatch({
-      type: ADD_VIDEO,
-      payload: {
-        id: '7Ur9zN2vMcs',
-        title: 'Javascript Secrets'
-      }
-    })
+    const id = e.target.id.value
+    const title = e.target.title.value
+    dispatch(addVideo({ id, title }))
   }
 })
 
