@@ -1,10 +1,24 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
+'use strict'
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+import React from 'react'
+import { render } from 'react-dom'
+import { AppContainer } from 'react-hot-loader'
+import App from './app'
+
+const renderApp = (NextApp) => {
+  render(
+    <AppContainer>
+      <NextApp />
+    </AppContainer>,
+    document.querySelector('[data-js="app"]')
+  )
+}
+
+renderApp(App)
+
+if (module.hot) {
+  module.hot.accept('./app', () => {
+    const NextApp = require('./app').default
+    renderApp(NextApp)
+  })
+}
